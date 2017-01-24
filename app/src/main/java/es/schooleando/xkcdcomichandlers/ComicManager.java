@@ -20,8 +20,6 @@ public class ComicManager {
 
         imageHandler.setResponseHandler(downloadHandler);
         downloadHandler.setResponseHandler(imageHandler);
-
-        this.start();
     }
 
     public void start() {

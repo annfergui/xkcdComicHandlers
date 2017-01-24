@@ -21,7 +21,7 @@ public class ComicActivity extends AppCompatActivity {
         ComicManager manager = new ComicManager(comicView);
 
         // Descargamos el primer comic
-        manager.downloadComic();
+        manager.start();
     }
 
     // Aquí faltará añadir Listeners para:
