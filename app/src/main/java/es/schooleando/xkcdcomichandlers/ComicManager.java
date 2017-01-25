@@ -2,7 +2,6 @@ package es.schooleando.xkcdcomichandlers;
 
 import android.os.HandlerThread;
 import android.os.Looper;
-import android.widget.ImageView;
 
 /**
  * Created by ruben on 5/01/17.
@@ -13,16 +12,18 @@ public class ComicManager {
     private DownloadHandler downloadHandler; // Funcionará asociado al Worker Thread (HandlerThread)
     private ImageHandler imageHandler;            // Funcionará asociado al UI Thread
 
-    public ComicManager(ImageView imageView) {
+    public ComicManager(ImageHandler.ImageHandlerListener listener) {
         downloadHandlerThread = new HandlerThread("myHandlerThread");
-        imageHandler = new ImageHandler(Looper.getMainLooper());
+        imageHandler = new ImageHandler(Looper.getMainLooper(), listener);
         downloadHandler = new DownloadHandler(downloadHandlerThread.getLooper());
 
         imageHandler.setResponseHandler(downloadHandler);
         downloadHandler.setResponseHandler(imageHandler);
+
+        downloadHandlerThread.start();
     }
 
-    public void start() {
+    public void init() {
         // Configuramos el tiempo en imageHandler
         imageHandler.initTimer(10);
 

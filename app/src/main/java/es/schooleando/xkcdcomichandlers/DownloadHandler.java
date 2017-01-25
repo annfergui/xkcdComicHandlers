@@ -36,7 +36,7 @@ public class DownloadHandler extends Handler {
 
         // También enviaremos mensajes PROGRESS al UI Thread mediante responseHandler.sendMessage() indicando el porcentaje de progreso, si hay.
         // Enviaremos mensajes ERROR, en caso de que haya un error en la conexión, descarga, etc...
-
+        //responseHandler.sendMessage(...);
 
     }
 
