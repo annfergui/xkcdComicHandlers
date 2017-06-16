@@ -6,9 +6,8 @@ import android.widget.ImageView;
 
 import java.net.URI;
 
-public class ComicActivity extends AppCompatActivity implements ImageHandler.ImageHandlerListener {
-    ComicManager manager;
-    ImageView comicView;
+public class ComicActivity extends AppCompatActivity  {
+
 
 
     @Override
@@ -17,29 +16,15 @@ public class ComicActivity extends AppCompatActivity implements ImageHandler.Ima
         setContentView(R.layout.activity_main);
 
 
-        comicView = (ImageView)findViewById(R.id.imageView);
+
 
         // Inicializamos el Comic
-        ComicManager manager = new ComicManager(this);
+        ComicManager manager = new ComicManager(this,5);
 
         // Descargamos el primer comic
-        manager.init();
-    }
-
-    @Override
-    public void onDownload(URI uri) {
 
     }
 
-    @Override
-    public void onProgress(int progress) {
-
-    }
-
-    @Override
-    public void onError(int id, String error) {
-
-    }
 
     // Aquí faltará añadir Listeners para:
     // un botón de activar/desactivar Timer (manager.start(), manager.stop())

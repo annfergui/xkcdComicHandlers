@@ -6,10 +6,10 @@ package es.schooleando.xkcdcomichandlers;
 
 public class Constantes {
     // Mensajes de ImageHandler
-    public static final int LOAD_IMAGE = 1;
-    public static final int PROGRESS = 2;
-    public static final int ERROR = 3;
+    public static final int LOAD_IMAGE = 0;
+    public static final int PROGRESS = 1;
+    public static final int ERROR = 2;
 
     // Mensajes de DownloadHandler
-    public static final int DOWNLOAD = 100;
+    public static final int DOWNLOAD = 3;
 }
